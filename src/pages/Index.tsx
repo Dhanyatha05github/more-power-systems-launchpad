@@ -1,40 +1,29 @@
 import { Link } from "react-router-dom";
-import { Shield, Wrench, Lightbulb, ArrowRight } from "lucide-react";
+import { Zap, Wrench, MapPin, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
 import serviceEquipment from "@/assets/service-equipment.jpg";
 import serviceMaintenance from "@/assets/service-maintenance.jpg";
-import serviceEngineering from "@/assets/service-engineering.jpg";
-import servicePipeline from "@/assets/service-pipeline.jpg";
 
 const services = [
-  { title: "Oil & Gas Equipment Supply", desc: "Premium industrial equipment and parts for upstream, midstream, and downstream operations.", img: serviceEquipment },
-  { title: "Maintenance Services", desc: "Comprehensive preventive and corrective maintenance to maximize equipment uptime.", img: serviceMaintenance },
-  { title: "Engineering Solutions", desc: "Custom engineering design, consulting, and project management for complex operations.", img: serviceEngineering },
-  { title: "Pipeline Services", desc: "End-to-end pipeline construction, inspection, and rehabilitation services.", img: servicePipeline },
-];
-
-const stats = [
-  { value: "20+", label: "Years Experience" },
-  { value: "500+", label: "Projects Completed" },
-  { value: "150+", label: "Expert Engineers" },
-  { value: "30+", label: "Countries Served" },
+  { title: "Generators", desc: "Tailored Diesel Genset solutions engineered to the highest quality standards for global infrastructure.", img: serviceEquipment },
+  { title: "Service & Maintenance", desc: "Fast-response support, genuine parts, and expert care to keep your critical power infrastructure operational.", img: serviceMaintenance },
 ];
 
 const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[85vh] flex items-center">
-      <img src={heroBg} alt="Oil refinery at sunset" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <img src={heroBg} alt="Dallas Texas skyline at sunset" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 hero-overlay" />
       <div className="container mx-auto relative z-10 px-4">
         <div className="max-w-2xl animate-fade-in-up">
-          <p className="text-orange font-semibold mb-3 text-sm uppercase tracking-widest">Trusted Oil & Gas Partner</p>
+          <p className="text-orange font-semibold mb-3 text-sm uppercase tracking-widest">Powering Critical Infrastructure</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Powering the Future of <span className="text-gradient">Energy</span>
+            Engineered Diesel Generator <span className="text-gradient">Solutions</span>
           </h1>
           <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-            More Power Systems delivers world-class equipment, maintenance, and engineering solutions for the oil & gas industry worldwide.
+            More Power Systems delivers complete, turnkey diesel generator solutions for the high-stakes demands of the North American data center market.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link to="/services" className="bg-accent text-accent-foreground px-7 py-3 rounded-md font-semibold hover:bg-orange-light transition-colors inline-flex items-center gap-2">
@@ -48,33 +37,21 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Stats */}
-    <section className="bg-navy py-12">
-      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {stats.map((s) => (
-          <div key={s.label} className="animate-fade-in-up">
-            <p className="font-heading text-3xl md:text-4xl font-bold text-orange">{s.value}</p>
-            <p className="text-primary-foreground/70 text-sm mt-1">{s.label}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
     {/* About Preview */}
     <section className="section-padding">
       <div className="container mx-auto text-center max-w-3xl">
         <p className="text-orange font-semibold text-sm uppercase tracking-widest mb-2">Who We Are</p>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-          Excellence in Oil & Gas Solutions
+          Advanced Engineering Meets Decades of Experience
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-8">
-          With over two decades of experience, More Power Systems has established itself as a trusted partner in the global oil and gas sector. We combine technical expertise with innovative solutions to deliver unmatched value to our clients.
+          More Power Systems is the US Sales and Service arm of Sterling Green Power Solution. We add advanced engineering and technology to a decades-old manufacturing base — ensuring critical infrastructure never goes dark.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
           {[
-            { icon: Shield, text: "Safety First" },
-            { icon: Wrench, text: "Expert Team" },
-            { icon: Lightbulb, text: "Innovation" },
+            { icon: Zap, text: "Best-in-Class Lead Times" },
+            { icon: Wrench, text: "Expert Service" },
+            { icon: MapPin, text: "Dallas & Dubai" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2 bg-secondary px-5 py-3 rounded-lg">
               <Icon size={20} className="text-orange" />
@@ -85,16 +62,16 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Services Preview */}
-    <section className="section-padding bg-secondary">
+    {/* Services Preview - white background */}
+    <section className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <p className="text-orange font-semibold text-sm uppercase tracking-widest mb-2">What We Do</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Our Services</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {services.map((s) => (
-            <div key={s.title} className="bg-card rounded-lg overflow-hidden card-hover shadow-sm">
+            <div key={s.title} className="bg-card rounded-lg overflow-hidden card-hover shadow-sm border border-border">
               <img src={s.img} alt={s.title} className="w-full h-48 object-cover" width={800} height={600} loading="lazy" />
               <div className="p-5">
                 <h3 className="font-heading font-bold text-foreground mb-2">{s.title}</h3>
@@ -118,7 +95,7 @@ const Index = () => (
           Ready to Power Your Next Project?
         </h2>
         <p className="text-primary-foreground/70 max-w-xl mx-auto mb-8">
-          Contact our team today to discuss how More Power Systems can deliver reliable, efficient solutions for your oil & gas operations.
+          Contact our team today to discuss how More Power Systems can deliver reliable, turnkey power solutions for your data center.
         </p>
         <Link to="/contact" className="bg-accent text-accent-foreground px-8 py-3 rounded-md font-semibold hover:bg-orange-light transition-colors inline-flex items-center gap-2">
           Get in Touch <ArrowRight size={18} />

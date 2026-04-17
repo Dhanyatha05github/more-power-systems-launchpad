@@ -20,12 +20,13 @@ const Contact = () => {
           <p className="text-orange font-semibold text-sm uppercase tracking-widest mb-2">Get In Touch</p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Contact Us</h1>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto">
-            Have a question or need a quote? Our team is ready to assist you with your oil & gas project needs.
+            Have a question or need a quote? Our team is ready to assist you with your power infrastructure needs.
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      {/* Contact - WHITE background */}
+      <section className="section-padding bg-background">
         <div className="container mx-auto grid md:grid-cols-2 gap-12">
           {/* Form */}
           <div>
@@ -78,8 +79,8 @@ const Contact = () => {
             <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Company Details</h2>
             <div className="space-y-6 mb-8">
               {[
-                { icon: MapPin, label: "Address", value: "123 Industrial Boulevard\nHouston, TX 77001, USA" },
-                { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+                { icon: MapPin, label: "USA Office", value: "Dallas, TX – USA" },
+                { icon: MapPin, label: "UAE Office", value: "Dubai, UAE" },
                 { icon: Mail, label: "Email", value: "info@morepowersystems.com" },
                 { icon: Clock, label: "Business Hours", value: "Mon – Fri: 8:00 AM – 6:00 PM CST" },
               ].map(({ icon: Icon, label, value }) => (
@@ -95,13 +96,17 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="rounded-lg overflow-hidden border border-border bg-secondary h-64 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <MapPin size={40} className="mx-auto mb-2 text-orange" />
-                <p className="text-sm font-medium">Map Placeholder</p>
-                <p className="text-xs">Houston, TX – USA</p>
-              </div>
+            {/* Google Maps embed - Dallas, TX */}
+            <div className="rounded-lg overflow-hidden border border-border h-64">
+              <iframe
+                title="Dallas, TX office location"
+                src="https://www.google.com/maps?q=Dallas,Texas,USA&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
