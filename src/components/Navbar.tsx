@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -15,15 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm">
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 rounded-lg bg-accent flex items-center justify-center">
-            <span className="font-heading text-lg font-bold text-accent-foreground">M</span>
-          </div>
-          <div>
-            <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">MORE POWER</span>
-            <span className="block text-xs text-orange font-medium -mt-1">SYSTEMS</span>
-          </div>
+          <img src={logo} alt="More Power Systems logo" className="h-12 w-auto bg-white rounded-md p-1" />
         </Link>
 
         {/* Desktop */}
